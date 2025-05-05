@@ -1,0 +1,98 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.dermalyze.ui.main.HomeFragment"
+        android:label="fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment2"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment2"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailArticleActivity"
+            app:destination="@id/detailArticleActivity">
+            <argument
+                android:name="article"
+                app:argType="com.example.dermalyze.ui.main.models.Article" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_cameraActivity"
+            app:destination="@id/cameraActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.dermalyze.ui.article.ArticleFragment"
+        android:label="fragment_article">
+        <action
+            android:id="@+id/action_articleFragment_to_detailArticleActivity"
+            app:destination="@id/detailArticleActivity">
+            <argument
+                android:name="article"
+                app:argType="com.example.dermalyze.ui.main.models.Article" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.example.dermalyze.ui.product.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.dermalyze.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_myProfilFragment"
+            app:destination="@id/myProfilFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+
+
+    <activity
+        android:id="@+id/detailArticleActivity"
+        android:name="com.example.dermalyze.ui.article.DetailArticleActivity"
+        android:label="activity_detail_article"
+        tools:layout="@layout/activity_detail_article">
+        <argument
+            android:name="article"
+            app:argType="com.example.dermalyze.ui.main.models.Article" />
+    </activity>
+    <activity
+        android:id="@+id/cameraActivity"
+        android:name="com.example.dermalyze.camera.CameraActivity"
+        android:label="activity_camera"
+        tools:layout="@layout/activity_camera" />
+    <fragment
+        android:id="@+id/myProfilFragment"
+        android:name="com.example.dermalyze.ui.profile.MyProfilFragment"
+        android:label="MyProfilFragment" />
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.example.dermalyze.ui.profile.PrivacyFragment"
+        android:label="PrivacyFragment" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.dermalyze.ui.profile.SettingFragment"
+        android:label="SettingFragment" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.dermalyze.ui.notification.NotificationFragment"
+        android:label="NotificationFragment" />
+</navigation>
